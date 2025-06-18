@@ -1,7 +1,5 @@
 package com.perfumelandiaspa.vendedores.Service;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +19,6 @@ public class VendedorService {
     //Crear vendedor
 public String crearVendedor(Vendedor vendedor) {
     try {
-
-
         VendedorEntity vendedorNuevo = new VendedorEntity();
         // vendedorNuevo.setIdVendedor(vendedor.getIdVendedor()); // Asigna el ID manual
         vendedorNuevo.setMetaMensual(vendedor.getMetaMensual());
@@ -40,10 +36,8 @@ public String crearVendedor(Vendedor vendedor) {
         return vendedorRepository.findById(idVendedor).get();
     }
 
-
     //Metodo para Eliminar vendedor por id
     public String eliminarPorId(int idVendedor) {
-
         //En caso de error
         try {
             if (!vendedorRepository.existsById(idVendedor)) {
@@ -56,8 +50,4 @@ public String crearVendedor(Vendedor vendedor) {
             return "Error al eliminar cliente: " + e.getMessage();
         }
     }
-
-
-    
-    
 }
