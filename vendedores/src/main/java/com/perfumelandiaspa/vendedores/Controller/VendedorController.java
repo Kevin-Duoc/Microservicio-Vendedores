@@ -35,11 +35,9 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Tag(name = "Vendedores", description = "API para gestión de vendedores con HATEOAS")
 public class VendedorController {
     
-    private final VendedorService vendedorService; // FIXED: final en lugar de @Autowired
-
-    /**
-     * Clase para la respuesta root con enlaces HATEOAS
-     */
+    private final VendedorService vendedorService; 
+    
+    //Clase para la respuesta root con enlaces HATEOAS
     public static class VendedorRoot extends RepresentationModel<VendedorRoot> {
         private final String message;
         private final String version;
